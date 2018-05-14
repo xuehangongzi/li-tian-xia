@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>肖战快到碗里来</title>
+    <style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    body{
+    height: 2000px;
+    }
+    #go-top{
+        width: 35px;
+        height: 74px;/*行级元素不能设置宽高，要定位*/
+        background: url("go-top.jpg") -100px 0 no-repeat;
+        position: fixed;/*固定定位，相对于浏览器，不管滚动条如何变化，他始终在右下角*/
+        bottom: 50px;
+        right: 50px;
+    }
+        #go-top:hover{
+            background: url("go-top.jpg") -300px 0 no-repeat;
+        }
+
+    </style>
+</head>
+<body>
+<h1>肖战我爱你</h1>
+<a href="javascript:;"   id="go-top"></a><!--javascript :;  是伪协议，这样做的目的是让a被点击后，不会因为#而-->
+                                                            <!--刷新页面，回到页面顶部-->
+                                               <!--#: href="#" 的话，点击a,页面会刷新来到顶部-->
+<script>
+    var oBtn = document.getElementById("go-top");
+    oBtn.onclick = function(){
+       // window.scrollTo(0,300);
+        // 写300的话，它就会直接跳到300那里，没有动画效果，要想慢点挪过去，就要用定时器做
+        //当点击按钮的时候，就先获取当时滚动条距离上面的距离，然后再用定时器一点点减少距离
+        var iScrollTop = document.documentElement.scrollTop||document.body.scrollTop;//这一句能代替if else判断语句
+        var timer = setInterval(function(){
+            window.scrollTo(0,iScrollTop*=0.6);//让滚动条移动到，当前滚动条位置-50的位置上
+            console.log(iScrollTop);
+            if(iScrollTop<=1){
+                clearInterval(timer);
+            }
+        },100);
+
+    }
+    // if(document.documentElement.scrollTop){
+    //     iScrollTop = document.documentElement.scrollTop;
+    // }else{
+    //     iScrollTop = document.body.scrollTop;
+    // }
+</script>
+
+</body>
+</html>

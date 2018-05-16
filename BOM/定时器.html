@@ -6,10 +6,21 @@
 </head>
 <body>
 <script>
+    //第一种定时器，每隔多长时间执行
+    // var i = 1;
+    // var  timer = setInterval(function(){
+    //
+    //     console.log(Math.random());
+    //     if(i==10){
+    //         clearInterval(timer);
+    //     }
+    //     i++;
+    // },500)
 
-     var timer = setInterval(function(){
-
-        },1000);
+    //第二种定时器 只执行一次
+    setTimeout(function(){
+        console.log(Math.random());
+    },500)
 
 
 </script>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后一个页面</title>
+</head>
+<body>
+<button id="btn">回上个页面</button>
+<script>
+    var oBtn = document.getElementById("btn");
+    oBtn.onclick = function () {
+        history.back();
+    }
+</script>
+</body>
+</html>

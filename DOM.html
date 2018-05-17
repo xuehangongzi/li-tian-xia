@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body>
+
+<ul>
+    <li>gg</li>
+    <li>gg</li>
+    <li>gg</li>
+    <li>gg</li>
+</ul>
+<div id="div1">我是谁。我在那</div>
+    <script>
+    var aLi = document.getElementsByTagName("a");
+
+        aLi[0].style.background = "red";
+    var oDiv1 = document.getElementById("div2");
+
+    oDiv1.onclick = function() {
+
+        oDiv1.style.background = "red";
+    }
+
+    var oDiv1 = document.getElementById("div1");
+    oDiv1.innerHTML = Math.random();
+    </script>
+</body>
+</html>

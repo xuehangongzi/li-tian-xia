@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>右键菜单</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li{
+            list-style : none;
+        }
+        #ul1{
+            width: 100px;
+            border: 1px solid #ff0000;
+            border-radius:5px;
+            padding: 5px 0;
+            display: none;
+            position:absolute;
+        }
+        #ul1 li{
+            height: 24px;
+            line-height：24px;
+            text-align:center;
+            color:#555;
+            font-size:12px;
+        }
+        #ul1 li:hover{
+            background: #00ff00;
+        }
+    </style>
+</head>
+<body>
+<ul id="ul1">
+
+    <li>二哈</li>
+    <li>金毛</li>
+    <li>泰迪</li>
+    <li>萨摩</li>
+</ul>
+<script>
+    // var oUl1 = document.getElementById("ul1");
+    // document.oncontextmenu = function(e){
+    //     e = e || window.event;
+    //    console.log(e.clientX+ "," +e.clientY);
+    //     oUl1.style.display = "block";
+    //     oUl1.style.left = e.clientX +"px";
+    //     oUl1.style.top = e.clientY + "px";
+    //     return false;//阻止浏览器默认行为，因为浏览器默认有一个右键显示菜单，所以要去掉
+    // }
+    // document.onclick = function(){
+    //     oUl1.style.display = "none";
+    // }
+    // var aLi = oUl1.getElementsByTagName("li");
+    // for(var i=0; i< aLi.length;i++){
+    //     aLi[i].onclick = function(){
+    //         console.log(this.innerHTML);
+    //     }
+    // }
+    var oUl1 = document.getElementById("ul1");
+    document.oncontextmenu = function(e){
+        e = e||window.event;
+        oUl1.style.display = "block";
+        oUl1.style.left = e.clientX + "px";
+        oUl1.style.top = e.clientY +"px";
+
+        return false;
+    }
+    document.onclick = function(){
+        oUl1.style.display = "none";
+    }
+    var aLi = oUl1.getElementsByTagName("li");
+    for (var i = 0; i<aLi.length;i++){
+        aLi[i].onclick = function(){
+            console.log(this.innerHTML);
+        }
+
+    }
+
+</script>
+</body>
+</html>

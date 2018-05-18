@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style:none;
+        }
+        #contain{
+            width: 400px;
+            height: 300px;
+            margin: 100px auto;
+            background: #ccc;
+        }
+        #btn{
+            overflow:hidden;//因为子元素浮动，脱离文档流，所以父元素没高度了，此时应该让父元素有高度
+        }
+        #btn li{
+            float: left;
+            width: 120px;
+            height: 30px;
+            background:#ffff00;
+            text-align:center;
+            line-height:30px;
+            margin-right:13px;
+            cursor:pointer;
+        }
+        #btn .selected{
+            background: #DA70D6;
+        }
+        /*#content{*/
+            /*position: relative;*/
+        /*}*/
+        #content div{
+            width: 400px;
+            height: 270px;
+            background:#cccccc;
+            border-top:1px solid #000;
+            /*position: absolute;*/
+            /*left:0;*/
+            /*top:0;*/
+            display:none;
+        }
+        #contain .active{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div id="contain">
+        <ul id="btn">
+            <li class="selected">二哈</li>
+            <li>萨摩</li>
+            <li>金毛</li>
+        </ul>
+        <div id="content">
+            <div class="active">二哈最傻</div>
+            <div>萨摩最萌</div>
+            <div>金毛最暖</div>
+        </div>
+    </div>
+    <script>
+        var oBtn = document.getElementById("btn");
+        var aLi = oBtn.getElementsByTagName("li");
+        var oContent = document.getElementById("content");
+        var aDiv = oContent.getElementsByTagName("div");
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].index = i;//index是自定义属性，叫啥都行
+            aLi[i].onclick = function(){
+                for(var j=0;j<aLi.length;j++){
+                    aLi[j].className = "";
+                    aDiv[j].className ="";
+                }
+             this.className = "selected";
+                aDiv[this.index].className = "active";
+            }
+        }
+    </script>
+</body>
+</html>

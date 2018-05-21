@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style:none;
+        }
+        #container{
+            width: 500px;
+            height: 400px;
+            margin: 0 auto;
+            position: relative;
+        }
+        #img-box img{
+            width: 500px;
+            height: 400px;
+            display:none;
+        }
+        #img-box .selected{
+            display:block;
+        }
+        #tab{
+            position: absolute;
+            right:10px;
+            bottom:10px;
+        }
+        #tab li{
+            width: 20px;
+            height: 20px;
+            background:#000;
+            color:#fff;
+            text-align:center;
+            line-height:20px;
+            float:left;
+            margin-right:2px;
+            cursor : pointer;
+        }
+        #tab li.selected{
+            background:orange;
+        }
+        .btn{
+            position:absolute;
+            left:10px;
+            bottom:10px;
+            background:#000;
+            color:#fff;
+            cursor: pointer;
+        }
+        .btn .selected{
+            background:orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="img-box">
+            <img src="img/1.png" alt="">
+            <img class="selected" src="img/2.png" alt="">
+            <img src="img/3.png" alt="">
+            <img src="img/4.png" alt="">
+        </div>
+        <ul  id="tab">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div class="btn">
+            <span id="prev-btn"> &lt;</span>
+            <span id="next-btn"> &gt;</span>
+        </div>
+    </div>
+    <script>
+        var oTab = document.getElementById("tab");
+        var aLi = oTab.getElementsByTagName("li");
+        var oImgBox = document.getElementById("img-box");
+        var  aImg = oImgBox.getElementsByTagName("img");
+        var oPrev = document.getElementById("prev-btn");
+        var oNext = document.getElementById("next-btn");
+        var oContainer = document.getElementById("container");
+        var timer;
+        // var nowIndex;//保存当前选中的下标，这样写会报错，只定义，未赋值，下面得鼠标划入才会获取当前索引
+        var nowIndex = 0;
+        for(var i =0;i<aLi.length;i++){
+            aLi[i].index = i ;
+            aLi[i].onmouseover = function(){
+                nowIndex = this.index;//获取当前下标值
+               changeImg();
+            }
+        }
+        oPrev.onclick = oNext.onclick = function(){
+            if(this==oPrev){
+                nowIndex--;
+                if(nowIndex == -1){
+                    nowIndex = aLi.length - 1;
+                }
+            }else{
+                nowIndex++;
+                //判断值是否越界，数组下标为0123，所以，如果当前下标为数组长度4，那就拉回到0
+                if(nowIndex==aLi.length){
+                    nowIndex = 0;
+                }
+            }
+            changeImg();
+        }
+        oContainer.onmouseover = function(){
+            clearInterval(timer);
+        };
+        oContainer.onmouseout = function(){
+            play();
+        };
+        //自动播放
+        play();//一定要先调用，这样当页面一加载的时候就能播放了
+        function play(){
+             timer = setInterval(function(){//不能有var，否则在别处调用时，又会重新定义timer了，不是一个timer
+
+                oNext.onclick();
+            },1000)
+        }
+        function changeImg(){
+            for(var j =0;j<aLi.length;j++){
+                aLi[j].className = "";
+                aImg[j].className = "";
+            }
+            aLi[nowIndex].className = "selected";
+            aImg[nowIndex].className = "selected";
+        }
+
+
+    </script>
+</body>
+</html>

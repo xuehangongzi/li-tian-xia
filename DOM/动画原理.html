@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原生JS动画</title>
+    <style>
+        #div1{
+            width: 400px;
+            height: 400px;
+            background: #FF0;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">hhhhh</div>
+<script>
+    var oDiv1 = document.getElementById("div1");
+    oDiv1.onclick = function(){
+        var timer = setInterval(function(){
+            // this.style.width = this.style.width + 10 +"px";这句不好使，取不到外联样式里的值
+            oDiv1.style.width = oDiv1.offsetWidth + 10 +"px";//offsetWidth 获取值不带单位
+            if(oDiv1.offsetWidth == 800){
+                clearInterval(timer);
+            }
+        },500)
+
+    }
+</script>
+</body>
+</html>

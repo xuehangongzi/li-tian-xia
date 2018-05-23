@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sibling</title>
+</head>
+<body>
+    <div id="div1"></div>
+    <ul id="ul1">
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+    </ul>
+    <script>
+        var oDiv1 = document.getElementById("div1");
+        function next(elem){
+            do{
+                    elem = elem.nextSibling;
+            }while(elem||elem.nodeType != 1 );//先获得回车加空格，然后回到循环继续找，找到空格的兄弟节点ul，并输出
+            return elem;
+        }
+        console.log(next(oDiv1));
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jiedian</title>
+</head>
+<body>
+<ul id="ul1">
+    <li id="aa">11</li>
+    <li>22</li>
+    <li class="bb">33</li>
+    <li>44</li>
+</ul>
+<script>
+    var oUl1 = document.getElementById("ul1");
+    // console.log(oUl1.children);
+    var oP = document.createElement("p");
+    var oA = document.getElementById("aa");
+
+    oP.innerHTML = "hhhhhh";
+    // oUl1.appendChild(oP);//追加子节点
+    // oUl1.removeChild(oA);//删除子节点
+    // oUl1.replaceChild(oP,oA);//用p代替第一个li
+    // oUl1.insertBefore(oP,oA);//在第一个之前插入p
+    // document.body.appendChild(oP);
+</script>
+</body>
+</html>

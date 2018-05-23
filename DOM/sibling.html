@@ -17,7 +17,7 @@
         function next(elem){
             do{
                     elem = elem.nextSibling;
-            }while(elem||elem.nodeType != 1 );//先获得回车加空格，然后回到循环继续找，找到空格的兄弟节点ul，并输出
+            }while(elem && elem.nodeType != 1 );//先获得回车加空格，然后回到循环继续找，找到空格的兄弟节点ul，并输出
             return elem;
         }
         console.log(next(oDiv1));

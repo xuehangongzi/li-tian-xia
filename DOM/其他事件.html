@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>其他事件</title>
+</head>
+<body>
+<a  id="btn" href="http://www.baidu.com">不让他跳转到百度页面</a>
+<script>
+    // document.onkeydowm = function(e){
+    //
+    //     var keycode = e.keyCode || window.event.which;
+    //     console.log(keycode);
+    // }
+    //阻止浏览器默认行为的
+    var oBtn = document.getElementById("btn");
+    oBtn.onclick = function(e){
+        e = e || window.event;
+        e.preventDefault();
+        alert("hhhhhh");
+        // e.returnValue = false;
+    }
+
+</script>
+
+
+</body>
+</html>

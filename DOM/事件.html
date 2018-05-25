@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <script>
+        var oDiv1 = document.getElementById("div1");
+        // oDiv1.onclick = function(){
+        //     console.log("1111");
+        // }
+        // oDiv1.onclick = function(){
+        //     console.log("2222");
+        // }
+        // oDiv1.addEventListener("click",function(){
+        //         console.log("11111");
+        // },false);
+        // oDiv1.addEventListener("click",function(){
+        //         console.log("22222");
+        // },false);
+        // oDiv1.attachEvent("onclick",function(){
+        //     console.log("1111");
+        // });
+        function addEvent(elem,type,fn,flag){
+            if(elem.addEventListener){
+                elem.addEventListener(type,fn,flag);
+            }else{
+                elem.attachEvent("on"+type,function(){
+                    fn.call(elem);
+                });
+            }
+        }
+        addEvent(oDiv1,"click",function(){
+                console.log("111112222");
+        },false);
+
+    </script>
+</body>
+</html>

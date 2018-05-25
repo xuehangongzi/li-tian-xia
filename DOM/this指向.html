@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this指向</title>
+</head>
+<body>
+    <script>
+        function aa(x,y){
+            console.log(this.age);
+            console.log(x+y);
+        }
+
+        var person={
+            name: "lixue",
+            age: 20
+        };
+        aa.call(person,3,4);
+        aa.apply(person,[4,4]);
+        aa.bind(person,5,4)();
+    </script>
+</body>
+</html>

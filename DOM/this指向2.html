@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background:#ff0;
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background: #0ff;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+    <script>
+        //在事件里，this指向当前对象
+        // var oDiv1 = document.getElementById("div1");
+        // oDiv1.onclick = function(){
+        //     console.log(this);
+        // }
+        //在对象里，this指向当前对象
+        var cat ={
+            name: "mimi",
+            age:2,
+            eat : function(){
+                console.log(this.name + "is eating !");
+            }
+        }
+        cat.eat();
+    </script>
+</body>
+</html>

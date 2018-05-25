@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #small{
+            position: relative;
+            width: 257px;
+            height: 238px;
+        }
+        #drag{
+            width: 100px;
+            height: 100px;
+            background: #ccc;
+            opacity: 0.6;
+            filter:alpha(opacity = 60);
+            position: absolute;
+            left:0;
+            top:0;
+            display:none;
+        }
+        #big{
+            width: 257px;
+            height: 238px;
+            position: absolute;
+            left: 257px;
+            top: 0px;
+           overflow:hidden; /*不写这一句的话，大图就会溢出他的父元素的范围*/
+            display : none;
+        }
+        #big-img{
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="small">
+        <img src="img/nanshen1.png" alt="">
+        <div id="drag"></div>
+    </div>
+    <div id="big">
+        <img  id="big-img" src="img/nanshen2.png" alt="">
+    </div>
+    <script>
+        var oSmall = document.getElementById("small");
+        var oDrag = document.getElementById("drag");
+        var oBig = document.getElementById("big");
+        var oBigImg = document.getElementById("big-img");
+        oSmall.onmouseover = function(){
+            oDrag.style.display = "block";
+            oBig.style.display = "block";
+            oSmall.onmousemove();
+        }
+        oSmall.onmouseout = function(){
+            oDrag.style.display = "none";
+            oBig.style.display = "none";
+        }
+        oSmall.onmousemove = function(e){
+            e = e|| window.event
+            var iLeft = e.clientX- oDrag.offsetWidth/2;
+            var iTop = e.clientY -oDrag.offsetHeight/2;
+            var xMax = oSmall.offsetWidth - oDrag.offsetWidth;
+            var yMax = oSmall.offsetWidth -oDrag.offsetWidth;
+            if(iLeft<0){
+                iLeft = 0;
+            }
+            if(iTop<0){
+                iTop = 0;
+            }
+            if(iLeft>xMax){
+                iLeft = xMax;
+            }
+            if(iTop>yMax){
+                iTop = yMax;
+            }
+            oDrag.style.left = iLeft + "px";
+            oDrag.style.top = iTop +"px";
+            oBigImg.style.left = -iLeft*(oBigImg.offsetWidth/oSmall.offsetWidth) +"px";
+            oBigImg.style.top = -iTop*(oBigImg.offsetHeight/oSmall.offsetHeight) +"px";
+
+        }
+
+    </script>
+</body>
+</html>

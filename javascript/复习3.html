@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复习3</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: #0f0;
+            position : absolute;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+    <script>
+        var oDiv1 = document.getElementById("div1");
+        oDiv1.onmousedown = function(e){
+            e = e || window.event;
+            var disX = e.clientX- oDiv1.offsetLeft;
+            var disY = e.clientY- oDiv1.offsetTop;
+            document.onmousemove = function(e){
+                e = e || window.event;
+                var iLeft = e.clientX - disX;
+                var iTop = e.clientY - disY  ;
+                oDiv1.style.left =iLeft + "px";
+                oDiv1.style.top =iTop  + "px";
+            }
+            oDiv1.onmouseup = function(){
+                document.onmousemove = null;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -55,6 +55,7 @@
             bottom:10px;
             color:#fff;
             background: black;
+            cursor:pointer;
         }
 
     </style>
@@ -87,32 +88,53 @@
     var aLi = oTab.getElementsByTagName("li");
     var oPrev = document.getElementById("prev");
     var oNext = document.getElementById("next");
+    var oContainer = document.getElementById("container");
     var nowIndex = 0;
+    var timer;
     for(var i=0;i<aLi.length;i++){
         aLi[i].index = i;
         aLi[i].onmouseover = function(){
             nowIndex = this.index;
-            for(var i =0;i<aLi.length;i++){
-                aLi[i].className = "";
-                aImg[i].className ="";
-            }
-            this.className = "selected";
-            aImg[this.index].className = "selected";
+            changeImg();
         }
     }
     oPrev.onclick = oNext.onclick = function(){
         if(this==oPrev){
             nowIndex--;
             if(nowIndex==-1){
-                nowIndex=0;
+                nowIndex= aLi.length - 1;
             }
         }else{
             nowIndex++;
             if(nowIndex==aLi.length){
-
+                nowIndex = 0;
             }
         }
+        changeImg();
+
     }
+    function changeImg(){
+        for(var i =0;i<aLi.length;i++){
+            aLi[i].className = "";
+            aImg[i].className ="";
+        }
+        aLi[nowIndex].className = "selected";
+        aImg[nowIndex].className = "selected";
+    }
+
+    oContainer.onmouseover = function(){
+        clearInterval(timer);
+    }
+    oContainer.onmouseout = function(){
+        play();
+    }
+    function play(){
+        timer = setInterval(function(){
+            oNext.onclick();
+        },1000)
+    }
+    play();
+
 
 </script>
 </body>

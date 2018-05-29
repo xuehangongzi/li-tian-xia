@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复习8</title>
+</head>
+<body>
+    <button id="btn">生孩子</button>
+    <ul id="ul1">
+        <li>11</li>
+        <li>22</li>
+    </ul>
+    <script>
+        var oBtn = document.getElementById("btn");
+        var oUl1 = document.getElementById("ul1");
+        var aLi = oUl1.getElementsByTagName("li");
+        oBtn.onclick = function(){
+            var oLi3 = document.createElement("li");
+            oLi3.innerHTML = Math.random();
+            oUl1.appendChild(oLi3);
+        }
+
+            oUl1.onclick = function(e){
+                e = e || window.event;
+                var target = e.target|| e.srcElement;
+                if(target.tagName == "LI"){
+                    alert(target.innerHTML);
+                }
+            }
+
+
+
+
+    </script>
+</body>
+</html>

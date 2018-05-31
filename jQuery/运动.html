@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>运动</title>
+    <script src="jquery-3.3.1.js"></script>
 </head>
 <body>
     <form action="">
@@ -16,8 +17,24 @@
         <input type="button" id="checkedAll" value="全选">
         <input type="button" id="checkedNo" value="全不选">
         <input type="button" id="checkedRev" value="反选">
-        <input type="button" id="send" value="提交">
-
     </form>
+    <script>
+        // console.log($("#checkedAll").val());//输出   全选，也就是value里的值
+        $("#checkedAll").val("aa");//把原来的value里的值替换成aa
+        // //反选
+        // $("#checkedRev").on("click",function(){
+        //     $(":checkbox").each(function(index,elem){
+        //         elem.checked = !elem.checked;
+        //     })
+        // })
+        // //全选
+        // $("#checkedAll").on("click",function(){
+        //     $(":checkbox").prop("checked",true);
+        // })
+        // //全不选
+        // $("#checkedNo").on("click",function(){
+        //     $(":checkbox").prop("checked",false);
+        // })
+    </script>
 </body>
 </html>

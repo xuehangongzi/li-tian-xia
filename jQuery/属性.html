@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        .aa{
+            background: #D02090;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="div1" class="aa">1111</div>
+    <script>
+
+        $("#div1").on("click",function(){
+            $("#div1").toggleClass("aa");
+        })
+
+        // $("#div1").removeClass("aa");
+        // $("#div1").addClass("bb");//给div1加个类bb的样式
+        // console.log($("#div1").attr("id"));//输出div1
+        //
+        // $("#div1").attr("id","div2");//div的id变成了div2
+        // $("#div1").removeAttr("class");
+    </script>
+</body>
+</html>

@@ -4,24 +4,51 @@
     <meta charset="UTF-8">
     <title>JQuery学习</title>
     <script  src="jquery-3.3.1.js"></script>
+
 </head>
 <body>
-    <h2 class="bb">jjjkkkk</h2>
-    <h2 class="aa">jjj</h2>
-    <div class="aa">
-        清醒的人最荒唐
-        <div>111</div>
-        <div>222</div>
-    </div>
-    <div>这个div是body的第一个孩子</div>
+    <ul>
+        <li id="aa">111</li>
+        <li>22</li>
+        <li>33</li>
+        <li>44</li>
+        <li>555</li>
+        <li>666</li>
+    </ul>
 
 
-<script>
-    $(".aa :first-child").css("background","red");
-    $(".aa:first-child").css("background","green");
-    // var $div1 = $("#div1");
-    // console.log(oDiv1.innerHTML);
-    // console.log($div1.html());
-</script>
+    <script>
+
+        // $("li:eq(2)").css("background","red");
+        // $("li:even").css("background","green");
+        // $("li:gt(2)").css("background","green");
+        // $("li:not('#aa')").css("background","green");
+
+        // var oDiv1 = document.getElementById("div1");
+        // console.log(oDiv1);//原生
+        // console.log($("#div1")[0]) ;//原生
+        // console.log($("#div1").get(0)) ;//原生
+        //
+        // console.log($("#div1"));//jquery 对象
+        // console.log($(oDiv1));//jquery 对象
+
+
+        // $(document).ready(function(){
+        //     var oDiv1 = document.getElementById("div1");
+        //     console.log(oDiv1.innerHTML +"2222");
+        // });
+        // window.onload = function(){
+        //     var oDiv1 = document.getElementById("div1");
+        //     console.log(oDiv1.innerHTML +"11111");
+        // }
+
+        // window.onload = function(){
+        //     var oDiv1 = document.getElementById("div1");
+        //     console.log(oDiv1.innerHTML +"2222");
+        // }
+
+         </script>
+
+
 </body>
 </html>

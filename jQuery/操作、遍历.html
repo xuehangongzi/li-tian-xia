@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作、遍历</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        .aa{
+            background:#D02090;
+        }
+
+    </style>
+</head>
+<body>
+    <!--<ul>-->
+        <!--<li>11</li>-->
+        <!--<li>-->
+            <!--22-->
+            <!--<ul>-->
+                <!--<li></li>-->
+                <!--<li></li>-->
+                <!--<li></li>-->
+            <!--</ul>-->
+        <!--</li>-->
+        <!--<li>33</li>-->
+    <!--</ul>-->
+    <!--<div id="div1">-->
+        <!--111-->
+        <!--<div  id="div2" style="background: cyan"> 3333</div>-->
+        <!--</div>-->
+    <script>
+        $("li").has("ul").css("background","red");//只给包含有ul的li设置颜色
+        // $("li").filter(":odd").css("background","red"); //给下标值是奇数的li设置背景颜色
+        // $("li").eq(2).css("background","red");//和下面这句效果相同
+        // $("li:eq(2)").css("background","red");
+        // $('<h2>新</h2>').replaceAll("#div2");//用h2代替div2
+        // $("#div2").replaceWith('<h2>新</h2>');//用h2代替div2
+        // $("#div2").remove();//可以在任何想要删掉的对象后面加.remove()
+        // $("#div1").before( '<div class="bb">222</div>');
+        // $("#div1").html("<h2>感觉自己是巨星</h2>");
+        // $("#div1").text("<h2>感觉自己是巨星</h2>");
+        // $("#div1").prepend($(".aa").clone());
+        // //改变的是body的样式
+        // $("body").append($("#div1").clone()).css("background","yellow");
+        // //改变的是最后加的div1的样式
+        // $("#div1").clone().appendTo($("body")).css("background","green");
+        // $("body").append(".aa");
+        // $("body").append( '<div><p>444444</p></div>');
+        // $("body").append('<div>介个元素会被加在下面</div>');
+        // $("#div1").wrapInner(".aa");
+        // var oAa = document.getElementsByClassName("aa")[0];
+        // $("#div1").wrap(oAa);
+        // var $div2 = $(".aa");
+        // $("#div1").wrap($div2);
+        // $("#div1").wrap(".aa");
+        // $("#div1").wrap(' <div id="div2">222222</div>');
+        // $("#div1").on("click",function(){
+        //     alert("感觉自己是巨星");
+        // });
+        // var $div2 = $("#div1").clone(true);
+        // $("body").append($div2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>提示框</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        .tip{
+            background:#00ff00;
+            border: 1px solid #000000;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div><a class="toolTip" href="" title="机智善良">李雪</a></div>
+    <div><a  class="toolTip" href="" title="智障脸皮厚">黄德昌</a></div>
+    <div><a  href="" title="情商高小仙女">刘春宇</a></div>
+    <div><a   href="" title="高大威武的小屁孩">苏杭</a></div>
+    <script>
+        $(".toolTip").on("mouseover",function(e){
+            var $tip = $('<span class="tip">'+ this.title+'</span>')
+                .css({
+                left: e.pageX+ 20,
+                top: e.pageY + 20
+                })
+            ;
+            this.title = "";
+            $("body").append($tip);
+        });
+        $(".toolTop").on("mouseout",function(e){
+            this.title = $(".tip").html();
+           $(".tip").remove();
+        });
+        $(".toolTip").on("mousemove",function(e){
+            $(".tip").css({
+                left: e.pageX+ 20,
+                top: e.pageY + 20
+            });
+        })
+    </script>
+</body>
+</html>

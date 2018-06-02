@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+    <script src="jquery-3.3.1.js"></script>
+</head>
+<body>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+    <button id="btn" value="click"></button>
+    <script>
+        var fn = function(){
+            $('<li>'+Math.random()+'</li>').appendTo("ul");
+        }
+        $("#btn").on("click",fn);
+        $("#btn").off("click",fn
+        );
+
+        // $("ul").on("click","li",function(){ //li才是实际要触发的元素
+        //     console.log($(this).html());//this代表当前点击的li
+        // });
+        // $("li").on("click",function(){
+        //     console.log($(this).html());
+        // });
+        // $("ul").on("click",function(e){
+        //     if(e.target.tagName =="LI"){
+        //         // console.log(e.target.innerHTML);
+        //         console.log($(e.target).html());
+        //     }
+        // })
+
+    </script>
+</body>
+</html>

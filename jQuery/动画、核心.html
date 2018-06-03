@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画、核心</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #00ff00;
+        }
+
+    </style>
+</head>
+<body>
+<button id="btn1">开始</button>
+<button id="btn2">停止</button>
+    <div id="div1"></div>
+
+    <script>
+
+        $("#btn1").on("click",function(){
+            $("#div1").animate({
+                width : 500,
+                height : 500
+            },3000,function(){
+                console.log("hahaha");
+            }).animate({
+                opacity: 0.6
+            })
+        })
+        $("#btn2").on("click",function(){
+            $("#div1").stop();
+        })
+        // $("#btn2").on("click",function(){
+        //     $("#div1").slideUp(5000);
+        // })
+        // $("#btn1").on("click",function(){
+        //     $("#div1").fadeIn(5000);
+        // })
+        // $("#btn2").on("click",function(){
+        //     $("#div1").fadeOut(5000);
+        // })
+        // $("#btn1").on("click",function(){
+        //     $("#div1").toggle(3000);
+        // })
+        // $("#btn2").on("click",function(){
+        //     $("#div1").show(3000);
+        // })
+    </script>
+</body>
+</html>

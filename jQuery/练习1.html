@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习1</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        .focus{
+            background:#00ffff;
+            border: 1px solid #ffff00;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <filedset>
+        <legend>个人基本信息</legend>
+        <div>
+            <label for="username">用户名：</label>
+            <input  id="username"  type="text" value="昵称">
+        </div>
+        <div>            
+            <label for="psd">登录密码：</label>
+            <input  id="psd"  type="password" value="密码">
+        </div>
+        <div>
+            <label for="msg">座右铭</label>
+            <textarea name="" id="msg" cols="30" rows="5">详细信息</textarea>
+        </div>
+    </filedset>
+</form>
+<script>
+    $(":input").on("focus",function(){
+        $(this).addClass("focus");
+        if(this.value == this.defaultValue){//判断是默认值还是我们输入的值，如果是默认值就清空，不是就留着
+            this.value = "";//用原生的value写的，比jQuery的val（）简单
+        }
+    }).on("blur",function(){
+        $(this).removeClass("focus");
+        if(!$(this).val()){//判断当前文本框里如果没有后输入内容的话，那就设置成默认的，如果有内容的话，就不设成默认的，而是刚刚输入的
+            $(this).val(this.defaultValue);
+        }
+    })
+</script>
+</body>
+</html>

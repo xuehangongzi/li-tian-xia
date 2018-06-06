@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>111</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        #ul1 li{
+            width: 100px;
+            height: 50px;
+            background: #ffff00;
+            float: left;
+            line-height:50px;
+            text-align:center;
+            position: relative;
+        }
+        #ul1 li::after{
+            content : "";
+            background:#000;
+            width: 5px;
+            height: 30px;
+            position: absolute;//因为伪类对象是行级元素，所以要设宽高的话就得先定位
+            right: 0;
+            top: 15px;
+        }
+    </style>
+</head>
+<body>
+<ul id="ul1">
+    <li>11</li>
+    <li>22</li>
+    <li>33</li>
+    <li>44</li>
+    <li>55</li>
+</ul>
+</body>
+</html>

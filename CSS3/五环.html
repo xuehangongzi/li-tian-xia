@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>五环</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .circle, .circle::after{
+            width: 200px;
+            height: 200px;
+            border: 10px solid #000;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .circle::after{
+            content: "";
+            top:-10px; /*因为是在每个圈里加子元素，所以子元素从边框下面加上，所以要往上窜个边框的距离*/
+            left:-10px;
+        }
+        .blue{
+            border-color: #0000ff;
+            top: 0px;
+            left: 0px;
+        }
+        .blue::after{
+            border-color: #0000ff;
+            z-index: 1;
+            border-bottom-color: transparent;
+        }
+        .black{
+            border-color: #000000;
+            top: 0px;
+            left: 230px;
+        }
+        .black::after{
+            border-color: #000000;
+            z-index: 1;
+            border-bottom-color: transparent;
+        }
+        .red{
+            border-color: #ff0000;
+            top: 0px;
+            left: 460px;
+        }
+        .red::after{
+            border-color:  #ff0000;
+            z-index: 1;
+            border-bottom-color: transparent;
+        }
+        .yellow{
+            border-color: #ffff00;
+            top: 110px;
+            left: 110px;
+        }
+        .yellow::after{
+            border-color:#ffff00;
+        }
+        .green{
+            border-color: #00ff00;
+            top: 110px;
+            left: 340px;
+        }
+        .green::after{
+            border-color: #00ff00;
+        }
+    </style>
+</head>
+<body>
+<div class="circle blue"></div>
+<div class="circle black "></div>
+<div class="circle  red" ></div>
+<div class="circle  yellow"></div>
+<div class="circle green"></div>
+</body>
+</html>

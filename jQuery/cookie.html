@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cookie</title>
+</head>
+<body>
+<script>
+
+    function setCookie(key,value,expires){
+        str = key +"="+value+";";
+        if(expires){//如果没传这个值，就不用判断了
+            var date = new Date();
+            date.setDate(date.getDate()+ expires);
+            str += "expires="+date;
+        }
+        document.cookie = str ;
+    }
+    // setCookie("name","litianxia",15);//关闭浏览器后再打开还有
+    // setCookie("age",12);//关闭浏览器之后再打开就没了
+
+    // var date = new Date();
+    // date.setDate(15);
+    // document.cookie = "name = lixue; expires ="+date;
+    // document.cookie = "height = 160; expires ="+date;
+    // document.cookie = "age = 21";
+</script>
+</body>
+</html>

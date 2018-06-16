@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+        .father-layout {
+            background: pink;
+        }
+
+        .father-layout .left {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+
+        .father-layout .right {
+            height: 150px;  /*右侧标准流里的元素，比左侧浮动的元素要高*/
+            background: red;
+            overflow:hidden;
+        }
+
+    </style>
+</head>
+<body>
+
+<section class="father-layout">
+    <div class="left">
+        李雪
+    </div>
+    <div class="right">
+        右侧李天下
+    </div>
+</section>
+
+</body>
+</html>
+
+

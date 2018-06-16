@@ -11,10 +11,11 @@
         #div1{
             width: 200px;
             height: 100px;
-            padding: 10px;
+            padding: 20px;
             border:10px solid #000000;
             background: #ffff00;
-            /*box-sizing: content-box;不写这句的话，也是默认标准盒模型*/
+            margin: 10px;
+
         }
         #div2{
             width: 200px;
@@ -22,7 +23,7 @@
             padding: 10px;
             border:10px solid #0000ff;
             background: #ff0000;
-            box-sizing: border-box;
+            margin:10px;
 
         }
     </style>
@@ -31,9 +32,16 @@
         <div id="div1" >111</div>
         <div id="div2">222</div>
         <script>
+            var oDiv1 = document.getElementById("div1");
+            console.log(oDiv1.getBoundingClientRect().width);
 
-           //  var oDiv1 = document.getElementById("div1");
-           // console.log( window.getComputedStyle(oDiv1).width ) ;
+
+
+
+
+            // console.log( oDiv1.currentStyle.width);
+
+            // console.log( window.getComputedStyle(oDiv1).width ) ;
         </script>
 
 </body>

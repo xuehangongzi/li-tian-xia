@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 100px;
+            padding: 10px;
+            border:10px solid #000000;
+            background: #ffff00;
+            /*box-sizing: content-box;不写这句的话，也是默认标准盒模型*/
+        }
+        #div2{
+            width: 200px;
+            height: 100px;
+            padding: 10px;
+            border:10px solid #0000ff;
+            background: #ff0000;
+            box-sizing: border-box;
+
+        }
+    </style>
+</head>
+<body>
+        <div id="div1" >111</div>
+        <div id="div2">222</div>
+        <script>
+
+           //  var oDiv1 = document.getElementById("div1");
+           // console.log( window.getComputedStyle(oDiv1).width ) ;
+        </script>
+
+</body>
+</html>

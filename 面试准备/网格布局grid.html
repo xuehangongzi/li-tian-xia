@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网格布局</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .contain {
+            display: grid;
+            width: 100%;
+            grid-template-rows: 100px;
+            grid-template-columns: 300px auto 300px;
+        }
+
+        #div1{
+            background: #fff000;
+        }
+        #div3{
+            background: #ff0000;
+        }
+        #div2{
+            background: #00ffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <div id="div1">左</div>
+        <div id="div2">中间</div>
+        <div id="div3">右</div>
+    </div>
+</body>
+</html>

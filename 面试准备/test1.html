@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .layout {
+            margin-bottom: 150px;
+        }
+
+
+        .layout article div { /*注意，这里是设置每个小块儿的高度为100px，而不是设置大容器的高度。大容器的高度要符合响应式*/
+            height: 100px;
+        }
+        .layout.float .left {
+            float: left;
+            width: 300px;
+            background: red;
+        }
+
+        .layout.float .right {
+            float: right;
+            width: 300px;
+            background: blue;
+        }
+
+        .layout.float .center {
+            background: green;
+
+        }
+    </style>
+</head>
+<body>
+<section class="layout float">
+    <!-- 用  article 标签包裹左、中、右三个部分 -->
+    <article class="left-right-center">
+        <!-- 输入 div.left+div.right+div.center，即可生成 -->
+        <div class="left">
+            我是 left
+        </div>
+        <div class="right">
+            我是 right
+        </div>
+        <div class="center">
+            浮动解决方案
+            我是 center
+        </div>
+
+    </article>
+
+</section>
+</body>
+</html>

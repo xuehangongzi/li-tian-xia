@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>累加</title>
+</head>
+<body>
+    <div id="div1">
+        <div @click="fn()"> {{m}} </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        var vm = new Vue({
+           el:"#div1",
+           data:{
+                m:0,
+           },
+           methods:{
+               fn:function(){
+                   this.m++;
+               }
+           }
+        });
+    </script>
+</body>
+</html>

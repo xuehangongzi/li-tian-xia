@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>233</title>
+</head>
+<body>
+<div id="div1">
+<ul>
+    <!--<li v-for="(ccc,index) in xue">{{ccc}}&#45;&#45;&#45;&#45;&#45;&#45;{{index}}</li>-->
+    <li v-for=" (val ,key) in student">{{key}}: {{val}}</li>
+</ul>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        var vm = new Vue({
+           el:"#div1",
+           data:{
+               xue:["a","b","c","d","e"],
+               student:{
+                   name:"lixue",
+                   age:21,
+                   school:"haligong",
+               },
+           }
+        });
+    </script>
+</body>
+</html>

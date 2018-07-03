@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>每天进步一点点</title>
+</head>
+<body>
+    <div id="div1">
+        <div> {{msg}}</div>
+        <div v-text="msg"></div>
+        <input type="text" v-model="msg">
+    </div>
+    <div id="div2"></div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    var vm = new Vue({
+        el: "#div1",
+        data:{
+            msg :"hello world"
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind</title>
+</head>
+<body>
+<div id="div1">
+    <img :src="imgSrc" alt="">
+    <div :class="[isAa,isCc]"></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    var vm = new Vue({
+       el:"#div1",
+       data:{
+           imgSrc:"../注册3.jpg",
+           isAa:"aa",
+           isBb:"cc",
+       }
+    });
+</script>
+</body>
+</html>

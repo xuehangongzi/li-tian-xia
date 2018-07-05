@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #app{
+            width: 400px;
+            height: 400px;
+            margin:0 auto;
+        }
+        ul li{
+            list-style:none;
+            background: #00ff00;
+            margin-top:10px;
+        }
+        li span{
+            float:right;
+
+        }
+        .bg{
+            background: #D02090;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>商品列表</h2>
+        <ul>
+            <li v-for="obj in arr" @click="fn(obj)" :class="{bg:obj.isBg}"> {{obj.name}}<span>{{obj.price}}</span> </li>
+        </ul>
+        <hr/>
+        <div>
+            <span>total</span>
+            <span>{{num}}</span>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        var vm = new Vue({
+            el:"#app",
+            data:{
+                arr:[
+                    {name:"帽子",price:1,isBg:false},
+                    {name:"衣服",price:2,isBg:false},
+                    {name:"鞋子",price:3,isBg:false},
+                    {name:"裤子",price:33,isBg:false},
+                    {name:"袜子",price:12,isBg:false},
+                ],
+               num:0,
+            },
+            methods:{
+                fn: function(o){
+                    o.isBg = !o.isBg;
+                    if(o.isBg){
+                        this.num += o.price;
+                    }else{
+                        this.num -= o.price;
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

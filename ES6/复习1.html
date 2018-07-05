@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复习1</title>
+    <style>
+        .focus{
+            background:#00ffff;
+            border: 2px solid #D02090;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <filedset>
+        <legend>个人基本信息</legend>
+        <div>
+            <label for="username">用户名：</label>
+            <input  id="username"  type="text" value="用户名">
+        </div>
+        <div>
+            <label for="psd">登录密码：</label>
+            <input  id="psd"  type="text" value="密码">
+        </div>
+        <div>
+            <label for="msg">座右铭</label>
+            <textarea name="" id="msg" cols="30" rows="5">详细信息</textarea>
+        </div>
+    </filedset>
+</form>
+<script src="jquery-3.3.1.js"></script>
+
+<script>
+    $(":input").on("focus",function(){
+        $(this).addClass("focus");
+        if(this.value==this.defaultValue){
+            this.value = "";
+        }
+    }).on("blur",function(){
+        $(this).removeClass("focus");
+        if(!$(this).val()){
+            $(this).val(this.defaultValue);
+        }
+    })
+
+
+
+
+</script>
+
+</body>
+</html>
